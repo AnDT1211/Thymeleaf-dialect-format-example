@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{base_layout.html}">
+
+<body>
+
+    <section layout:fragment="content_section">
+        <p id="xxx">This is a paragraph from the content page</p>
+    </section>
+
+    <section layout:fragment="button_section">
+        <button id="btn1" type="button" class="btn btn-primary">Primary</button>
+    </section>
+
+    <th:block layout:fragment="script">
+    <!--    contains js file-->
+        <script th:src="@{js/app.js}"></script>
+
+    <!--    assign event-->
+        <script>
+            $(() => {
+                $('#btn1').click(() => {
+                    clickMe1();
+                });
+            });
+        </script>
+    </th:block>
+
+</body>
+</html>
